@@ -4,6 +4,7 @@
 
 - [Ajiroghene Sunny](https://github.com/Ajioz)
 - [Adetola Oyebode](https://github.com/ybdtola)
+- [Timi Ambaye](https://github.com/itstimiking)
 - [Uchenna Egbo](https://github.com/yuhcee)
 - [MaryBlessing Umeh](https://github.com/marybngozi)
 - [Mehelo Mbialeu Brice Dimitri](https://github.com/lovehope5)
