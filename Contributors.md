@@ -6,6 +6,7 @@
 - [Adetola Oyebode](https://github.com/ybdtola)
 - [Uchenna Egbo](https://github.com/yuhcee)
 - [MaryBlessing Umeh](https://github.com/marybngozi)
+- [Abednego Aginam](https://github.com/Abednego-py)
 - [Mehelo Mbialeu Brice Dimitri](https://github.com/lovehope5)
 - [Nyamekesse Samuel](https://github.com/Nyamekesse)
 - [Mubarak Mustapha](https://github.com/mako-commits)
