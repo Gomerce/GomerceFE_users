@@ -1,4 +1,56 @@
-# Getting Started with Create React App
+# Gomerce
+
+This is the frontend code base of Gomerce web application. Gomerce is an e-commerce app where users can shope things online and get delivered at their door step.
+Comes with rich features and a friendly user interface.
+
+## Tech Stack (Dependencies)
+
+The tech stack include the following
+
+- React Js version 18
+- Material UI version 5
+- Axios
+- Redux toolkit
+
+## Project Structure
+
+- [Contributions.md](Contributions.md)
+- [Contributors.md](Contributors.md)
+- [LICENSE](LICENSE)
+- [README.md](README.md)
+- [node_modules](node_modules)
+- [package\-lock.json](package-lock.json)
+- [package.json](package.json)
+- **public**
+  - [index.html](public/index.html)
+- **src**
+
+  - [App.css](src/App.css)
+  - [App.jsx](src/App.jsx)
+  - **Assets**
+
+    - **Images**
+
+  - **SetUpData**
+
+  - **Theme**
+
+  - **Views**
+
+  - **actions**
+
+  - **api**
+
+  - **components**
+  - **constants**
+
+  - **pages**
+
+  - **reducers**
+
+  - [responsive.js](src/responsive.js)
+
+- [yarn.lock](yarn.lock)
 
 This project was bootstrapped with [Gommerce](https://github.com/Ajioz/gomerce_user_fe.git).
 
