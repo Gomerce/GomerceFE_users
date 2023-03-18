@@ -1,0 +1,6 @@
+@media (min-width: 550px) {
+  .full_height550 {
+    height: 100vh;
+    margin: auto;
+  }
+}
