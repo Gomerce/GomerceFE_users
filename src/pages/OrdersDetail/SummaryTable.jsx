@@ -75,8 +75,9 @@ const SummaryTable = () => {
                 >
                   {row.item.map((item, index) => {
                     return (
-                      <Typography variant="caption" key={index}>{`${item +
-                        " "}`}</Typography>
+                      <Typography variant="caption" key={index}>{`${
+                        item + " "
+                      }`}</Typography>
                     );
                   })}
                 </TableCell>

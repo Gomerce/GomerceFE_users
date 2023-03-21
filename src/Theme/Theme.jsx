@@ -140,9 +140,10 @@ const theme = createTheme({
           "& .MuiInputLabel-root.Mui-focused": {
             color: black,
           },
-          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            border: "none",
-          },
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+            {
+              border: "none",
+            },
         },
       },
     },
