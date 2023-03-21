@@ -1,7 +1,7 @@
-import React from "react";
-import { Image, Preview, Thumbnail, ThumbnailsSection } from "./styles";
-import phone from "../../assets/images/1 (2).jpg";
-import phone2 from "../../assets/images/1 (1).jpg";
+import React from 'react'
+import { Image, Preview, Thumbnail, ThumbnailsSection } from './styles'
+import phone from '../../assets/images/1 (2).jpg'
+import phone2 from '../../assets/images/1 (1).jpg'
 const ItemImage = () => {
   return (
     <Image>
@@ -12,7 +12,7 @@ const ItemImage = () => {
         ))}
       </ThumbnailsSection>
     </Image>
-  );
-};
+  )
+}
 
-export default ItemImage;
+export default ItemImage

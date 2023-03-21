@@ -1,30 +1,30 @@
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+import { styled } from '@mui/material/styles'
+import Box from '@mui/material/Box'
 
 export const Wrap = styled(Box)(({ theme }) => ({
-  width: "100vw",
-  height: "100vh",
-  margin: "0 auto",
-  maxWidth: "1440px",
-}));
+  width: '100vw',
+  height: '100vh',
+  margin: '0 auto',
+  maxWidth: '1440px'
+}))
 
 export const Container = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  width: "786px",
-  minWidth: "200px",
-  top: "50%",
-  left: "50%",
-  padding: "0 2%",
-  margin: "0 auto",
-  transform: "translate(-50%,-50%)",
-  textAlign: "center",
-  [theme.breakpoints.down("mobile_550")]: {
-    width: "100%",
-  },
-}));
-export const Image = styled("img")(({ theme }) => ({
-  width: "100%",
+  position: 'absolute',
+  width: '786px',
+  minWidth: '200px',
+  top: '50%',
+  left: '50%',
+  padding: '0 2%',
+  margin: '0 auto',
+  transform: 'translate(-50%,-50%)',
+  textAlign: 'center',
+  [theme.breakpoints.down('mobile_550')]: {
+    width: '100%'
+  }
+}))
+export const Image = styled('img')(({ theme }) => ({
+  width: '100%',
 
-  height: "400px",
-  objectFit: "contain",
-}));
+  height: '400px',
+  objectFit: 'contain'
+}))

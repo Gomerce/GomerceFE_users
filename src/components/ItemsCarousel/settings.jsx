@@ -1,24 +1,34 @@
-import React from "react";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import Arrow from "./style";
+import React from 'react'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import Arrow from './style'
+import PropTypes from 'prop-types'
+
 const PrevArrow = (props) => {
-  const { onClick } = props;
+  const { onClick } = props
 
   return (
-    <Arrow sx={{ left: "-2%" }} onClick={onClick}>
+    <Arrow sx={{ left: '-2%' }} onClick={onClick}>
       <ArrowBackIosNewIcon />
     </Arrow>
-  );
-};
+  )
+}
 const NextArrow = (props) => {
-  const { onClick } = props;
+  const { onClick } = props
   return (
-    <Arrow sx={{ right: "-2%" }} onClick={onClick}>
+    <Arrow sx={{ right: '-2%' }} onClick={onClick}>
       <ArrowForwardIosIcon />
     </Arrow>
-  );
-};
+  )
+}
+
+PrevArrow.propTypes = {
+  onClick: PropTypes.func
+}
+
+NextArrow.propTypes = {
+  onClick: PropTypes.func
+}
 
 export const carouselSettings = {
   dots: false,
@@ -36,8 +46,8 @@ export const carouselSettings = {
         slidesToShow: 5,
         slidesToScroll: 2,
         infinite: true,
-        dots: false,
-      },
+        dots: false
+      }
     },
     {
       breakpoint: 1024,
@@ -45,32 +55,32 @@ export const carouselSettings = {
         slidesToShow: 4,
         slidesToScroll: 3,
         infinite: true,
-        dots: false,
-      },
+        dots: false
+      }
     },
     {
       breakpoint: 840,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
-        initialSlide: 3,
-      },
+        initialSlide: 3
+      }
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-        initialSlide: 2,
-      },
+        initialSlide: 2
+      }
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
-        initialSlide: 2,
-      },
-    },
-  ],
-};
+        initialSlide: 2
+      }
+    }
+  ]
+}

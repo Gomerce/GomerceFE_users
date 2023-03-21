@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import { StyledSelect } from "./CustomSelect";
-import FormControl from "@mui/material/FormControl";
+import React, { useState } from 'react'
+import { StyledSelect } from './CustomSelect'
+import { Box, FormControl, MenuItem } from '@mui/material'
+import PropTypes from 'prop-types'
+
 const CustomSelect = (props) => {
-  const { background, border, width, label, margin, items } = props;
-  const [sort, setSort] = useState("");
+  const { background, border, width, label, margin, items } = props
+  const [sort, setSort] = useState('')
 
   const handleChange = (event) => {
-    setSort(event.target.getAttribute("data-value"));
+    setSort(event.target.getAttribute('data-value'))
     // console.log(event.target.getAttribute("data-value"));
-  };
+  }
 
   return (
-    <Box sx={{ width: width, margin: margin ? margin : "" }}>
+    <Box sx={{ width, margin: margin || '' }}>
       <FormControl fullWidth>
         <StyledSelect
           select
@@ -30,11 +30,21 @@ const CustomSelect = (props) => {
               <MenuItem value={item} key={index} onClick={handleChange}>
                 {item}
               </MenuItem>
-            );
+            )
           })}
         </StyledSelect>
       </FormControl>
     </Box>
-  );
-};
-export default CustomSelect;
+  )
+}
+
+CustomSelect.propTypes = {
+  background: PropTypes.any,
+  border: PropTypes.any,
+  width: PropTypes.number,
+  label: PropTypes.string,
+  margin: PropTypes.any,
+  items: PropTypes.any
+}
+
+export default CustomSelect

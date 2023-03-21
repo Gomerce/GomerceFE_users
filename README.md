@@ -35,7 +35,7 @@ The tech stack include the following
 
   - **Theme**
 
-  - **Views**
+  - **Index**
 
   - **actions**
 

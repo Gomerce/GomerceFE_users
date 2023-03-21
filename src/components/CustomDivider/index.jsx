@@ -1,7 +1,7 @@
-import React from "react";
-import { CustomDivider } from "./styles";
+import React from 'react'
+import { CustomDivider } from './styles'
 const CustomDiv = () => {
-  return <CustomDivider />;
-};
+  return <CustomDivider />
+}
 
-export default CustomDiv;
+export default CustomDiv
