@@ -76,6 +76,7 @@ const SignupComponent = () => {
     } else {
       setIsSuccess(true)
     }
+
     // try {
     //   axios.post(
     //     Registered_URL,
@@ -102,7 +103,6 @@ const SignupComponent = () => {
   return (
     <>
       {isSuccess ? (
-        // eslint-disable-next-line multiline-ternary
         <section>
           <Typography variant="h1">Successfully Registered</Typography>
           <Button variant="text" href="/login">

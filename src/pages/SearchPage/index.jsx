@@ -17,12 +17,12 @@ const SearchPage = () => {
   ]
 
   const theme = useTheme()
-  const matchesLaptop_1024 = useMediaQuery(theme.breakpoints.down('laptop_1024'))
+  const matchesLaptop1024 = useMediaQuery(theme.breakpoints.down('laptop_1024'))
   const matchesTablet = useMediaQuery(theme.breakpoints.down('tablet_840'))
 
   return (
     <Wrapper>
-      <BreadCrumbs navigation={navigation} max={matchesLaptop_1024 ? 2 : 8} />
+      <BreadCrumbs navigation={navigation} max={matchesLaptop1024 ? 2 : 8} />
       <Grid container direction="row" spacing={4} justifyContent="space-between">
         {matchesTablet ? null : (
           <Grid item tablet_650={3}>
