@@ -1,22 +1,17 @@
-import React from "react";
-import Typography from "@mui/material/Typography";
-import { CardBox, Image, Details } from "./styles";
-import Button from "@mui/material/Button";
-function ProductCard({ name, image, description, price }) {
+import React from 'react'
+import { CardBox, Details, Image } from './styles'
+import { Button, Typography } from '@mui/material'
+import PropTypes from 'prop-types'
+
+const ProductCard = ({ name, image, description, price }) => {
   return (
     <CardBox>
       <Image image={image} />
       <Details>
-        <Typography
-          variant="body2"
-          fontWeight={400}
-          textTransform="capitalize"
-          mt={"5%"}
-          mb={"5%"}
-        >
-          {description.substring(0, 17) + "..."}
+        <Typography variant="body2" fontWeight={400} textTransform="capitalize" mt={'5%'} mb={'5%'}>
+          {description.substring(0, 17) + '...'}
         </Typography>
-        <Typography variant="h6" fontWeight={600} fontSize="16px" mb={"3%"}>
+        <Typography variant="h6" fontWeight={600} fontSize="16px" mb={'3%'}>
           {`$ ${price}`}
         </Typography>
         <Button variant="outlined" fullWidth>
@@ -24,7 +19,14 @@ function ProductCard({ name, image, description, price }) {
         </Button>
       </Details>
     </CardBox>
-  );
+  )
 }
 
-export default ProductCard;
+ProductCard.propTypes = {
+  name: PropTypes.string,
+  image: PropTypes.any,
+  description: PropTypes.string,
+  price: PropTypes.number | PropTypes.string
+}
+
+export default ProductCard

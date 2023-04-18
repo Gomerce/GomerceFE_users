@@ -1,41 +1,34 @@
-import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import FormLabel from "@mui/material/FormLabel";
-import TextField from "@mui/material/TextField";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
-import CustomDivider from "../../../components/CustomDivider";
-import ShipmentSection from "./ShipmentSection";
+import React, { useState } from 'react'
+import Button from '@mui/material/Button'
+import FormLabel from '@mui/material/FormLabel'
+import TextField from '@mui/material/TextField'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormControl from '@mui/material/FormControl'
+import Box from '@mui/material/Box'
+import MenuItem from '@mui/material/MenuItem'
+import Typography from '@mui/material/Typography'
+import CustomDivider from '../../../components/CustomDivider'
+import ShipmentSection from './ShipmentSection'
 const CheckoutDelivery = () => {
-  const [pickupStation, setPickUpStation] = useState("");
+  const [pickupStation, setPickUpStation] = useState('')
 
   const handleChange = (event) => {
-    setPickUpStation(event.target.value);
-  };
+    setPickUpStation(event.target.value)
+  }
   return (
     <>
       <FormControl fullWidth>
         <FormLabel>
-          <Typography variant="subtitle2">
-            How do you want your order delivered?
-          </Typography>
+          <Typography variant="subtitle2">How do you want your order delivered?</Typography>
         </FormLabel>
-        <RadioGroup defaultValue={"pickup station"}>
-          <FormControlLabel
-            value="pickup station"
-            control={<Radio />}
-            label="Pickup Station"
-          />
+        <RadioGroup defaultValue={'pickup station'}>
+          <FormControlLabel value="pickup station" control={<Radio />} label="Pickup Station" />
           <Typography variant="subtitle2" mt={1} mb={1}>
-            Ready for pick up between Tuesday 20 Sep and Thursday 22 Sep with
-            cheaper shipping fees?
+            Ready for pick up between Tuesday 20 Sep and Thursday 22 Sep with cheaper shipping fees?
           </Typography>
-          <Box mt={1} mb={1} sx={{ width: "260px" }}>
+          <Box mt={1} mb={1} sx={{ width: '260px' }}>
             <TextField
               select
               onChange={handleChange}
@@ -45,9 +38,9 @@ const CheckoutDelivery = () => {
               size="small"
               variant="outlined"
             >
-              <MenuItem value={"london"}>London</MenuItem>
-              <MenuItem value={"abuja"}>Abuja</MenuItem>
-              <MenuItem value={"ghana"}>Ghana</MenuItem>
+              <MenuItem value={'london'}>London</MenuItem>
+              <MenuItem value={'abuja'}>Abuja</MenuItem>
+              <MenuItem value={'ghana'}>Ghana</MenuItem>
             </TextField>
           </Box>
           <CustomDivider />
@@ -63,7 +56,7 @@ const CheckoutDelivery = () => {
         save and continue
       </Button> */}
     </>
-  );
-};
+  )
+}
 
-export default CheckoutDelivery;
+export default CheckoutDelivery

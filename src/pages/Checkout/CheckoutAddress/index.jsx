@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { Group, InputGroup } from "./styles";
+import React, { useState } from 'react'
+import Box from '@mui/material/Box'
+import FormControl from '@mui/material/FormControl'
+import MenuItem from '@mui/material/MenuItem'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import { Group, InputGroup } from './styles'
 const CheckoutAddress = () => {
-  const [pickupStation, setPickUpStation] = useState("");
+  const [pickupStation, setPickUpStation] = useState('')
 
   const handleChange = (event) => {
-    setPickUpStation(event.target.value);
-  };
+    setPickUpStation(event.target.value)
+  }
   return (
     <>
       <FormControl fullWidth>
@@ -20,18 +20,18 @@ const CheckoutAddress = () => {
         </Typography>
         <Box
           sx={{
-            display: "Flex",
-            flexDirection: { mobile_0: "column", tablet_600: "row" },
-            alignItems: { mobile_0: "flex-start", tablet_600: "center" },
-            flexWrap: "wrap",
-            width: "100%",
+            display: 'Flex',
+            flexDirection: { mobile_0: 'column', tablet_600: 'row' },
+            alignItems: { mobile_0: 'flex-start', tablet_600: 'center' },
+            flexWrap: 'wrap',
+            width: '100%'
           }}
         >
           <Box mr={7}>
             <Typography variant="subtitle2" mt={1.2} mb={2}>
               Firstname
             </Typography>
-            <Box sx={{ width: { mobile_0: "100%", mobile_360: "272px" } }}>
+            <Box sx={{ width: { mobile_0: '100%', mobile_360: '272px' } }}>
               <TextField size="small" fullWidth />
             </Box>
           </Box>
@@ -39,7 +39,7 @@ const CheckoutAddress = () => {
             <Typography variant="subtitle2" mt={1.2} mb={2}>
               Lastname
             </Typography>
-            <Box sx={{ width: { mobile_0: "100%", mobile_360: "272px" } }}>
+            <Box sx={{ width: { mobile_0: '100%', mobile_360: '272px' } }}>
               <TextField size="small" fullWidth />
             </Box>
           </Box>
@@ -50,13 +50,13 @@ const CheckoutAddress = () => {
           </Typography>
           <Box
             sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              margin: "2% 0",
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              margin: '2% 0'
             }}
           >
-            <Box sx={{ width: "100px", marginRight: "2%" }}>
+            <Box sx={{ width: '100px', marginRight: '2%' }}>
               <TextField
                 select
                 onChange={handleChange}
@@ -65,9 +65,9 @@ const CheckoutAddress = () => {
                 size="small"
                 variant="outlined"
               >
-                <MenuItem value={"london"}>London</MenuItem>
-                <MenuItem value={"abuja"}>Abuja</MenuItem>
-                <MenuItem value={"ghana"}>Ghana</MenuItem>
+                <MenuItem value={'london'}>London</MenuItem>
+                <MenuItem value={'abuja'}>Abuja</MenuItem>
+                <MenuItem value={'ghana'}>Ghana</MenuItem>
               </TextField>
             </Box>
 
@@ -83,13 +83,7 @@ const CheckoutAddress = () => {
             Delivery address
           </Typography>
           <InputGroup>
-            <TextField
-              size="small"
-              fullWidth
-              multiline
-              minRows={2}
-              maxRows={2}
-            />
+            <TextField size="small" fullWidth multiline minRows={2} maxRows={2} />
           </InputGroup>
         </Group>
         <Group>
@@ -97,13 +91,7 @@ const CheckoutAddress = () => {
             Additional info
           </Typography>
           <InputGroup>
-            <TextField
-              size="small"
-              fullWidth
-              multiline
-              minRows={2}
-              maxRows={2}
-            />
+            <TextField size="small" fullWidth multiline minRows={2} maxRows={2} />
           </InputGroup>
         </Group>
         <Group>
@@ -112,9 +100,9 @@ const CheckoutAddress = () => {
           </Typography>
           <InputGroup>
             <TextField select size="small" fullWidth>
-              <MenuItem value={"london"}>London</MenuItem>
-              <MenuItem value={"abuja"}>Abuja</MenuItem>
-              <MenuItem value={"ghana"}>Ghana</MenuItem>
+              <MenuItem value={'london'}>London</MenuItem>
+              <MenuItem value={'abuja'}>Abuja</MenuItem>
+              <MenuItem value={'ghana'}>Ghana</MenuItem>
             </TextField>
           </InputGroup>
         </Group>
@@ -124,15 +112,15 @@ const CheckoutAddress = () => {
           </Typography>
           <InputGroup>
             <TextField select size="small" fullWidth>
-              <MenuItem value={"london"}>London</MenuItem>
-              <MenuItem value={"abuja"}>Abuja</MenuItem>
-              <MenuItem value={"ghana"}>Ghana</MenuItem>
+              <MenuItem value={'london'}>London</MenuItem>
+              <MenuItem value={'abuja'}>Abuja</MenuItem>
+              <MenuItem value={'ghana'}>Ghana</MenuItem>
             </TextField>
           </InputGroup>
         </Group>
       </FormControl>
     </>
-  );
-};
+  )
+}
 
-export default CheckoutAddress;
+export default CheckoutAddress

@@ -1,16 +1,16 @@
-import React from "react";
-import Typography from "@mui/material/Typography";
-import barDetails from "../../SetUpData/RatingProgressBar";
+import React from 'react'
+import Typography from '@mui/material/Typography'
+import barDetails from '../../data/RatingProgressBar'
 import {
   BarWrap,
   RatingSummary,
   ReviewsHeadWrap,
   ReviewsSection,
-  ReviewsStatusText,
-} from "./styles";
-import Ratings from "./Ratings";
-import LinearProgressBar from "./LinearProgressBar";
-import CommentsCard from "./CommentsCard";
+  ReviewsStatusText
+} from './styles'
+import Ratings from './Ratings'
+import LinearProgressBar from './LinearProgressBar'
+import CommentsCard from './CommentsCard'
 const ReviewsMain = () => {
   return (
     <ReviewsSection>
@@ -18,17 +18,17 @@ const ReviewsMain = () => {
         <Typography
           variant="h6"
           fontSize={{
-            mobile_0: "16px",
-            tablet_600: "20px",
-            laptop_1024: "28px",
+            mobile_0: '16px',
+            tablet_600: '20px',
+            laptop_1024: '28px'
           }}
         >
           Ratings and reviews
         </Typography>
         <Typography
           variant="caption"
-          fontSize={"14px"}
-          sx={{ display: { mobile_0: "none", tablet_600: "inline-block" } }}
+          fontSize={'14px'}
+          sx={{ display: { mobile_0: 'none', tablet_600: 'inline-block' } }}
         >
           <b>Ratings and reviews are verified</b>
         </Typography>
@@ -36,20 +36,20 @@ const ReviewsMain = () => {
       <RatingSummary>
         <ReviewsStatusText>
           <Typography variant="h5">4.2</Typography>
-          <Ratings margin={"10% 0%"} readOnly={true} />
-          <Typography variant="caption">{"124"} reviews</Typography>
+          <Ratings margin={'10% 0%'} readOnly={true} />
+          <Typography variant="caption">{'124'} reviews</Typography>
         </ReviewsStatusText>
         <BarWrap>
           {barDetails.map((detail) => {
-            const { label, value } = detail;
-            return <LinearProgressBar label={label} value={value} />;
+            const { label, value } = detail
+            return <LinearProgressBar label={label} value={value} />
           })}
         </BarWrap>
       </RatingSummary>
       <CommentsCard />
       <CommentsCard />
     </ReviewsSection>
-  );
-};
+  )
+}
 
-export default ReviewsMain;
+export default ReviewsMain

@@ -1,10 +1,10 @@
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import React from "react";
-import CustomDivider from "../../components/CustomDivider";
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import React from 'react'
+import CustomDivider from '../../components/CustomDivider'
 
-import { CustomSummary, Row } from "./styles";
+import { CustomSummary, Row } from './styles'
 
 const Summary = () => {
   return (
@@ -12,8 +12,8 @@ const Summary = () => {
       <Typography
         variant="h6"
         fontWeight={400}
-        fontSize={"24px"}
-        sx={{ textAlign: { mobile_0: "center", tablet_600: "inherit" } }}
+        fontSize={'24px'}
+        sx={{ textAlign: { mobile_0: 'center', tablet_600: 'inherit' } }}
       >
         Cart Summary
       </Typography>
@@ -23,16 +23,16 @@ const Summary = () => {
           <Typography variant="body2">Subtotal (2 items)</Typography>
         </Box>
         <Box>
-          <Typography variant="body2" fontSize={"24px"} fontWeight={700}>
+          <Typography variant="body2" fontSize={'24px'} fontWeight={700}>
             <b>$ 59.9</b>
           </Typography>
         </Box>
       </Row>
-      <Button variant="contained" fullWidth={"true"}>
+      <Button variant="contained" fullWidth={'true'}>
         proceed to checkOut
       </Button>
     </CustomSummary>
-  );
-};
+  )
+}
 
-export default Summary;
+export default Summary

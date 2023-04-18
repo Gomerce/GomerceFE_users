@@ -1,11 +1,11 @@
-import React from "react";
-import { ListItem, ShippingSection } from "./styles";
-import Typography from "@mui/material/Typography";
-import CustomDivider from "../../../components/CustomDivider";
-import { Box } from "@mui/material";
+import React from 'react'
+import { ListItem, ShippingSection } from './styles'
+import Typography from '@mui/material/Typography'
+import CustomDivider from '../../../components/CustomDivider'
+import { Box } from '@mui/material'
 const ShipmentSection = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: '100%' }}>
       <Typography variant="subtitle2" mt={2} mb={2}>
         Deliver between Tuesday 20 Sep and Thursday 22 Sep
       </Typography>
@@ -44,7 +44,7 @@ const ShipmentSection = () => {
         </ListItem>
       </ShippingSection>
     </Box>
-  );
-};
+  )
+}
 
-export default ShipmentSection;
+export default ShipmentSection
