@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Box, Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material/styles'
+import { Box, Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
 import Wrapper from '../../components/Wrapper/Wrapper'
