@@ -3,7 +3,7 @@ import { Breadcrumbs, Button, Link, Stack } from '@mui/material'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import PropTypes from 'prop-types'
 
-function handleClick(event) {
+function handleClick (event) {
   event.preventDefault()
   console.info('You clicked a breadcrumb.')
 }

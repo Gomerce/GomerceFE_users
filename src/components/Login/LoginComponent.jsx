@@ -13,7 +13,7 @@ const LoginComponent = () => {
   //   emailRef.current.getElementsByTagName("input")[0].focus();
   // }, []);
 
-  async function handleSubmit(event) {
+  async function handleSubmit (event) {
     console.log('You tried to login! \nFeature coming soon, please come back later!')
   }
 

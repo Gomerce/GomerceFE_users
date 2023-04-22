@@ -67,6 +67,6 @@
     "prettier": "2.8.6"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "src/*": ["eslint . --fix", "prettier --write ."]
   }
 }

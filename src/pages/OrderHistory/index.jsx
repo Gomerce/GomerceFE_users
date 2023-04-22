@@ -73,7 +73,7 @@ const OrdersHistory = (props) => {
   )
 }
 
-function createData(ID, Customer, Email, Items, Price, Status, Date) {
+function createData (ID, Customer, Email, Items, Price, Status, Date) {
   return { ID, Customer, Email, Items, Price, Status, Date }
 }
 
