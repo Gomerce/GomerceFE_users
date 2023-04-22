@@ -3,6 +3,8 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import LeftArrow from '../../components/Arrow/LeftArrow'
 import RightArrow from '../../components/Arrow/RightArrow'
+import PropTypes from 'prop-types'
+
 const PrevArrow = (props) => {
   const { onClick } = props
 
@@ -58,4 +60,12 @@ export const settings = {
       }
     }
   ]
+}
+
+PrevArrow.propTypes = {
+  onClick: PropTypes.func
+}
+
+NextArrow.propTypes = {
+  onClick: PropTypes.func
 }

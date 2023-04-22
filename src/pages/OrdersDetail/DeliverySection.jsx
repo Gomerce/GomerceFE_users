@@ -1,14 +1,15 @@
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { Delivery, Frame } from './styles'
-import Tracking from './DesktopTrackingDisplay'
 import { useTheme } from '@mui/material/styles'
 import { useMediaQuery } from '@mui/material'
 import MobileTrackingDisplay from './MobileTrackingDisplay'
 import DesktopTrackingDisplay from './DesktopTrackingDisplay'
+import PropTypes from 'prop-types'
+
 const DeliverySection = ({ isMobile }) => {
   const theme = useTheme()
-  const matchesTablet_600Down = useMediaQuery(theme.breakpoints.down('tablet_600'))
+  const matchesTablet600Down = useMediaQuery(theme.breakpoints.down('tablet_600'))
   return (
     <Delivery>
       <Typography
@@ -37,9 +38,13 @@ const DeliverySection = ({ isMobile }) => {
           <b>Expected delivery date:</b> 01/01/2023
         </Typography>
       </Frame>
-      {matchesTablet_600Down ? <MobileTrackingDisplay /> : <DesktopTrackingDisplay />}
+      {matchesTablet600Down ? <MobileTrackingDisplay /> : <DesktopTrackingDisplay />}
     </Delivery>
   )
+}
+
+DeliverySection.propTypes = {
+  isMobile: PropTypes.bool
 }
 
 export default DeliverySection

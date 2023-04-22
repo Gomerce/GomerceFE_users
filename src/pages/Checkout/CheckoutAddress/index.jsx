@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
-import Box from '@mui/material/Box'
-import FormControl from '@mui/material/FormControl'
-import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
+import { Box, FormControl, MenuItem, TextField, Typography } from '@mui/material'
 import { Group, InputGroup } from './styles'
 const CheckoutAddress = () => {
   const [pickupStation, setPickUpStation] = useState('')

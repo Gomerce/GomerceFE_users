@@ -1,8 +1,9 @@
 import React from 'react'
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
+import { Box, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
+import PropTypes from 'prop-types'
+
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 7,
   borderRadius: 10,
@@ -14,6 +15,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     backgroundColor: ' #1F2839'
   }
 }))
+
 const LinearProgressBar = (props) => {
   return (
     <Box
@@ -36,6 +38,11 @@ const LinearProgressBar = (props) => {
       </Box>
     </Box>
   )
+}
+
+LinearProgressBar.propTypes = {
+  value: PropTypes.string,
+  label: PropTypes.string
 }
 
 export default LinearProgressBar

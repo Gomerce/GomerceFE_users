@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import Box from '@mui/material/Box'
-import Rating from '@mui/material/Rating'
+import { Box, Rating } from '@mui/material'
+import PropTypes from 'prop-types'
 
 const Ratings = ({ margin, readOnly }) => {
   const [value, setValue] = useState(2)
 
   return (
-    <Box sx={margin && { margin: margin }}>
+    <Box sx={margin && { margin }}>
       <Rating
         name="rating"
         value={value}
@@ -19,6 +19,11 @@ const Ratings = ({ margin, readOnly }) => {
       />
     </Box>
   )
+}
+
+Ratings.propTypes = {
+  margin: PropTypes.any,
+  readOnly: PropTypes.bool
 }
 
 export default Ratings

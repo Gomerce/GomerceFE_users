@@ -1,12 +1,11 @@
 import React from 'react'
-import Stack from '@mui/material/Stack'
-import Breadcrumbs from '@mui/material/Breadcrumbs'
+import { Breadcrumbs, Button, Stack } from '@mui/material'
 import CustomBreadcrumbDivider from './CustomBreadcrumbDivider'
-import Button from '@mui/material/Button'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { checkoutButtonStyle } from './styles'
+import PropTypes from 'prop-types'
 
-const CustomCheckoutBreadcrumb = ({ address, payment, delivery }) => {
+const CustomCheckoutBreadcrumb = ({ address, delivery, payment }) => {
   const breadcrumbs = [
     <Button
       key="1"
@@ -40,6 +39,12 @@ const CustomCheckoutBreadcrumb = ({ address, payment, delivery }) => {
       </Breadcrumbs>
     </Stack>
   )
+}
+
+CustomCheckoutBreadcrumb.propTypes = {
+  address: PropTypes.bool,
+  delivery: PropTypes.bool,
+  payment: PropTypes.bool
 }
 
 export default CustomCheckoutBreadcrumb

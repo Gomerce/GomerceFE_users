@@ -51,8 +51,8 @@ const theme = createTheme({
   },
   palette: {
     common: {
-      black: black,
-      white: white
+      black,
+      white
     },
     primary: {
       main: deepDarkBlue

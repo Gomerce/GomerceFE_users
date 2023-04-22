@@ -1,6 +1,5 @@
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import React from 'react'
+import { Typography } from '@mui/material'
 import tracking from '../../data/tracking'
 import { CustomHr, IconBox, TrackDisplay, TrackItem } from './styles'
 const DesktopTrackingDisplay = () => {

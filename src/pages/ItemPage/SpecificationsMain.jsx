@@ -56,7 +56,7 @@ const SpecificationsMain = () => {
               laptop_1024: '24px'
             }}
           >
-            What's in the box
+            What&apos;s in the box
           </Typography>
           <CustomDivider />
           <ListWrap>

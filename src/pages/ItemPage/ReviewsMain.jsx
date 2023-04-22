@@ -11,6 +11,7 @@ import {
 import Ratings from './Ratings'
 import LinearProgressBar from './LinearProgressBar'
 import CommentsCard from './CommentsCard'
+
 const ReviewsMain = () => {
   return (
     <ReviewsSection>
@@ -42,7 +43,7 @@ const ReviewsMain = () => {
         <BarWrap>
           {barDetails.map((detail) => {
             const { label, value } = detail
-            return <LinearProgressBar label={label} value={value} />
+            return <LinearProgressBar label={label} value={value} key={detail} />
           })}
         </BarWrap>
       </RatingSummary>
