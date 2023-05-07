@@ -5,9 +5,11 @@ import React from 'react'
 import Wrapper from '../../components/Wrapper/Wrapper'
 import { useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
+
 const LandingPage = () => {
   const theme = useTheme()
   const matchesLaptop = useMediaQuery(theme.breakpoints.down('laptop_1152'))
+
   return (
     <Wrapper>
       <Grid container direction={{ laptop_1024: 'row' }} spacing={1}>

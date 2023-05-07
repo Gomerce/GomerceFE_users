@@ -1,9 +1,5 @@
 import React from 'react'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Grid from '@mui/material/Grid'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
+import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import TwitterIcon from '@mui/icons-material/Twitter'
@@ -13,6 +9,7 @@ import ItemImage from './ItemImage'
 import Ratings from './Ratings'
 import CustomDivider from '../../components/CustomDivider'
 import { Details, DetailsWrap, IconsWrapper, ItemDetails, ShareSection } from './styles'
+
 const DetailsMain = () => {
   return (
     <Details>
@@ -49,7 +46,7 @@ const DetailsMain = () => {
                   display={'flex'}
                   flexDirection={{ mobile_0: 'column', mobile_550: 'row' }}
                 >
-                  Infinix Smart 6,6.6", 2GB RAM, 5000mAh, Polar Black
+                  Infinix Smart 6,6.6&quot;, 2GB RAM, 5000mAh, Polar Black
                 </Typography>
                 <IconButton
                   size="small"

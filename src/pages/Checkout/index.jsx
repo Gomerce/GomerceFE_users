@@ -1,12 +1,8 @@
-import React, { useState, useRef } from 'react'
-import Box from '@mui/material/Box'
-import { useTheme } from '@mui/material/styles'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
+import React, { useRef, useState } from 'react'
+import { Box, Button, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
 import Wrapper from '../../components/Wrapper/Wrapper'
-import Grid from '@mui/material/Grid'
 import OrderSummary from '../../components/OrderSummary'
 import NeedHelp from '../../components/NeedHelp'
 import { Container, Navigate } from './styles'
@@ -14,14 +10,17 @@ import CustomStepper from './Stepper'
 import CheckoutDelivery from './CheckoutDelivery'
 import CheckoutPayment from './CheckoutPayment'
 import CheckoutAddress from './CheckoutAddress'
-import { useMediaQuery } from '@mui/material'
 
-const steps = [<CheckoutAddress />, <CheckoutDelivery />, <CheckoutPayment />]
+const steps = [
+  <CheckoutAddress key="checkout-address" />,
+  <CheckoutDelivery key="checkout-delivery" />,
+  <CheckoutPayment key="checkout-payment" />
+]
 const titles = ['Address details', 'Delivery method', 'Payment method']
 const Checkout = () => {
   const theme = useTheme()
-  const matchesMobile_360Down = useMediaQuery(theme.breakpoints.down('mobile_360'))
-  const matchesTablet_600Down = useMediaQuery(theme.breakpoints.down('tablet_600'))
+  const matchesMobile360Down = useMediaQuery(theme.breakpoints.down('mobile_360'))
+  const matchesTablet600Down = useMediaQuery(theme.breakpoints.down('tablet_600'))
   const topRef = useRef()
   const [activeStep, setActiveStep] = useState(0)
   const [completed, setCompleted] = useState({})
@@ -41,6 +40,7 @@ const Checkout = () => {
     topRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
+  // eslint-disable-next-line no-unused-vars
   const handleComplete = () => {
     const newCompleted = completed
     newCompleted[activeStep] = true
@@ -67,12 +67,12 @@ const Checkout = () => {
             variant="h5"
             fontWeight={400}
             fontSize={'24px'}
-            align={matchesTablet_600Down ? 'center' : 'inherit'}
+            align={matchesTablet600Down ? 'center' : 'inherit'}
           >
             Checkout
           </Typography>
 
-          {matchesTablet_600Down ? (
+          {matchesTablet600Down ? (
             <Box
               sx={{
                 width: '100%',
@@ -93,7 +93,7 @@ const Checkout = () => {
             <Box sx={{ width: '100%' }}>{steps[activeStep]}</Box>
             <Navigate>
               <Button
-                size={matchesMobile_360Down ? 'small' : 'medium'}
+                size={matchesMobile360Down ? 'small' : 'medium'}
                 onClick={handleBack}
                 disabled={activeStep === 0}
               >
@@ -101,7 +101,7 @@ const Checkout = () => {
                 Back
               </Button>
               <Button
-                size={matchesMobile_360Down ? 'small' : 'medium'}
+                size={matchesMobile360Down ? 'small' : 'medium'}
                 variant="contained"
                 onClick={activeStep === maxSteps - 1 ? console.log('') : handleNext}
               >

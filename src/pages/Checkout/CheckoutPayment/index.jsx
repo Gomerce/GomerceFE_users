@@ -1,13 +1,9 @@
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import React from 'react'
-import { useState } from 'react'
+import { Box, Button, MenuItem, TextField, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import summary from '../../../data/summaryData'
 import CustomDivider from '../../../components/CustomDivider'
 import { Row, Summary } from './styles'
+
 const CheckoutPayment = () => {
   const [payment, setPayment] = useState('')
   const handleChange = (event) => {

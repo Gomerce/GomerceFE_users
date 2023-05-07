@@ -6,6 +6,7 @@ import { Box, styled } from '@mui/material'
 import { useLocation } from 'react-router-dom'
 import './App.css'
 import FloatingButton from './components/FloatingButton'
+
 const App = () => {
   const location = useLocation()
 
@@ -15,6 +16,7 @@ const App = () => {
     display: 'flex',
     flexDirection: 'column'
   }))
+
   const exceptPath = [
     '/login',
     '/signup',

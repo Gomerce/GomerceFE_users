@@ -1,8 +1,6 @@
 import React from 'react'
-import Box from '@mui/material/Box'
-import Stepper from '@mui/material/Stepper'
-import Step from '@mui/material/Step'
-import StepLabel from '@mui/material/StepLabel'
+import { Box, Stepper, Step, StepLabel } from '@mui/material'
+import PropTypes from 'prop-types'
 
 const CustomStepper = ({ activeStep, titles }) => {
   return (
@@ -28,6 +26,11 @@ const CustomStepper = ({ activeStep, titles }) => {
       </Stepper>
     </Box>
   )
+}
+
+CustomStepper.propTypes = {
+  activeStep: PropTypes.any,
+  titles: PropTypes.any
 }
 
 export default CustomStepper

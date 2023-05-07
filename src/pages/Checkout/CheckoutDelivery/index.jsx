@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import Button from '@mui/material/Button'
-import FormLabel from '@mui/material/FormLabel'
-import TextField from '@mui/material/TextField'
-import Radio from '@mui/material/Radio'
-import RadioGroup from '@mui/material/RadioGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import FormControl from '@mui/material/FormControl'
-import Box from '@mui/material/Box'
-import MenuItem from '@mui/material/MenuItem'
-import Typography from '@mui/material/Typography'
+import {
+  Box,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  MenuItem,
+  Radio,
+  RadioGroup,
+  TextField,
+  Typography
+} from '@mui/material'
 import CustomDivider from '../../../components/CustomDivider'
 import ShipmentSection from './ShipmentSection'
+
 const CheckoutDelivery = () => {
   const [pickupStation, setPickUpStation] = useState('')
 

@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardActionArea from '@mui/material/CardActionArea'
+import PropTypes from 'prop-types'
 
 const MobileSummary = ({ title, quantity, price, image }) => {
   return (
@@ -37,4 +38,12 @@ const MobileSummary = ({ title, quantity, price, image }) => {
     </Card>
   )
 }
+
+MobileSummary.propTypes = {
+  title: PropTypes.string,
+  quantity: PropTypes.string,
+  price: PropTypes.string,
+  image: PropTypes.string
+}
+
 export default MobileSummary

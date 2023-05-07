@@ -1,20 +1,23 @@
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
-import FormControl from '@mui/material/FormControl'
-import Grid from '@mui/material/Grid'
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import Select from '@mui/material/Select'
-import Typography from '@mui/material/Typography'
 import React from 'react'
 import { ActionRow } from './styles'
 import Phone from '../../assets/images/phone1.jfif'
 import CustomDivider from '../../components/CustomDivider'
-import { useMediaQuery } from '@mui/material'
-import { useTheme } from '@mui/material'
+import {
+  Box,
+  Button,
+  Divider,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Typography,
+  useMediaQuery,
+  useTheme
+} from '@mui/material'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined'
+
 const CartItem = () => {
   const [quantity, setQuantity] = React.useState('')
 
@@ -22,7 +25,8 @@ const CartItem = () => {
     setQuantity(event.target.value)
   }
   const theme = useTheme()
-  const matchesMobile_550 = useMediaQuery(theme.breakpoints.down('mobile_550'))
+  const matchesMobile550 = useMediaQuery(theme.breakpoints.down('mobile_550'))
+
   return (
     <Box>
       <Grid
@@ -52,7 +56,7 @@ const CartItem = () => {
                 fontWeight={400}
                 sx={{ display: 'block', marginBottom: '0.5em' }}
               >
-                xiamo redmi 10A, 6.53" 3GB+64GB, 13.0MP, 5000mAh
+                xiamo redmi 10A, 6.53&quot; 3GB+64GB, 13.0MP, 5000mAh
               </Typography>
               <Typography
                 variant="p"
@@ -92,13 +96,13 @@ const CartItem = () => {
                   </Select>
                 </FormControl>
                 <Divider orientation="vertical" variant="middle" flexItem />
-                {matchesMobile_550 ? (
+                {matchesMobile550 ? (
                   <DeleteOutlineOutlinedIcon />
                 ) : (
                   <Button variant="text">delete</Button>
                 )}
                 <Divider orientation="vertical" variant="middle" flexItem />
-                {matchesMobile_550 ? (
+                {matchesMobile550 ? (
                   <BookmarkBorderOutlinedIcon />
                 ) : (
                   <Button variant="text">save for later</Button>

@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import { PageHeader } from './styles'
 import Wrapper from '../../components/Wrapper/Wrapper'

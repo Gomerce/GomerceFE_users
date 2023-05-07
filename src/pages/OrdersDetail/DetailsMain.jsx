@@ -3,15 +3,14 @@ import { DetailsMain, InfoWrapper, OrderInfo, ProductSummary } from './styles'
 import { orderInfo } from '../../data/data_orders'
 import SummaryTable from './SummaryTable'
 import CustomDivider from '../../components/CustomDivider'
-import Typography from '@mui/material/Typography'
+import { Typography, useMediaQuery } from '@mui/material'
 import MobileSummary from './MobileSummary'
 import { useTheme } from '@mui/material/styles'
-import { useMediaQuery } from '@mui/material'
 import { summary } from '../../data/summary'
 
 const Details = () => {
   const theme = useTheme()
-  const matchesLaptop_1024Down = useMediaQuery(theme.breakpoints.down('tablet_600'))
+  const matchesLaptop1024Down = useMediaQuery(theme.breakpoints.down('tablet_600'))
   return (
     <DetailsMain>
       <Typography variant="body2" fontSize={'14px'} fontWeight={700}>
@@ -38,7 +37,7 @@ const Details = () => {
           <b>Product Summary</b>
         </Typography>
 
-        {matchesLaptop_1024Down ? (
+        {matchesLaptop1024Down ? (
           summary.map((item, index) => <MobileSummary key={index} {...item} />)
         ) : (
           <SummaryTable />

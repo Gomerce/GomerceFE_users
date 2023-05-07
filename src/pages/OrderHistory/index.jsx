@@ -1,24 +1,28 @@
 import React from 'react'
-import Box from '@mui/material/Box'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableFooter from '@mui/material/TableFooter'
-import TablePagination from '@mui/material/TablePagination'
-import TableRow from '@mui/material/TableRow'
-import TableHead from '@mui/material/TableHead'
-import IconButton from '@mui/material/IconButton'
+import {
+  Box,
+  IconButton,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+  Typography,
+  useTheme
+} from '@mui/material'
 import FirstPageIcon from '@mui/icons-material/FirstPage'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
 import LastPageIcon from '@mui/icons-material/LastPage'
 import Wrapper from '../../components/Wrapper/Wrapper'
 import { PageHeader, StatusBadge } from './styles'
-import { Typography, useTheme } from '@mui/material'
 import BreadCrumbs from '../../components/BreadCrumbs'
 import MiniSearchInput from '../../components/MiniSearchInput'
+import PropTypes from 'prop-types'
 
+// eslint-disable-next-line no-unused-vars
 const OrdersHistory = (props) => {
   const theme = useTheme()
   const { count, page, rowsPerPage, onPageChange } = props
@@ -69,7 +73,7 @@ const OrdersHistory = (props) => {
   )
 }
 
-function createData(ID, Customer, Email, Items, Price, Status, Date) {
+function createData (ID, Customer, Email, Items, Price, Status, Date) {
   return { ID, Customer, Email, Items, Price, Status, Date }
 }
 
@@ -360,6 +364,13 @@ const OrderHistory = () => {
       </Box>
     </Wrapper>
   )
+}
+
+OrdersHistory.propTypes = {
+  count: PropTypes.number,
+  page: PropTypes.number,
+  rowsPerPage: PropTypes.number,
+  onPageChange: PropTypes.func
 }
 
 export default OrderHistory

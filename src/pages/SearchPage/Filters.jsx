@@ -1,14 +1,10 @@
 import React from 'react'
-import FormLabel from '@mui/material/FormLabel'
-import FormControl from '@mui/material/FormControl'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import Box from '@mui/material/Box'
+import { FormLabel, FormControl, FormControlLabel, FormGroup, Checkbox, Box } from '@mui/material'
 import { FilterCover } from './styles'
+import PropTypes from 'prop-types'
 
 const Filters = ({ heading, items }) => {
-  var obj = Object.assign({}, ...items.map((elem) => ({ [elem.item]: elem.isChecked })))
+  const obj = Object.assign({}, ...items.map((elem) => ({ [elem.item]: elem.isChecked })))
   const [state, setState] = React.useState(obj)
   const handleChange = (event) => {
     setState({
@@ -37,6 +33,11 @@ const Filters = ({ heading, items }) => {
       </FormControl>
     </Box>
   )
+}
+
+Filters.propTypes = {
+  heading: PropTypes.any,
+  items: PropTypes.any
 }
 
 export default Filters
