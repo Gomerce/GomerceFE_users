@@ -4,19 +4,25 @@ import Collections from './Collections'
 import BigSlider from '../../components/BigSlider'
 import { Typography } from '@mui/material'
 import { BestSellers } from './styles'
-const AsideMain = () => {
+import PropTypes from 'prop-types'
+
+const AsideMain = ({ products }) => {
   return (
-    <>
-      <BigSlider />
-      <BestSellers>
-        <Typography variant="h6" fontSize={'18.75px'} fontWeight={'600'} color={'#8E8E8E'}>
-          Best sellers
-        </Typography>
-        <ItemsCarousel />
-      </BestSellers>
-      <Collections />
-    </>
+        <>
+            <BigSlider/>
+            <BestSellers>
+                <Typography variant="h6" fontSize={'18.75px'} fontWeight={'600'} color={'#8E8E8E'}>
+                    Best sellers
+                </Typography>
+                <ItemsCarousel products={products}/>
+            </BestSellers>
+            <Collections/>
+        </>
   )
+}
+
+AsideMain.propTypes = {
+  products: PropTypes.any
 }
 
 export default AsideMain
