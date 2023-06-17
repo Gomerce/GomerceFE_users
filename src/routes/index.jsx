@@ -22,7 +22,7 @@ const Index = () => {
       <Route exact path="/item-page" element={<ItemPage />} />
       <Route exact path="/order-detail" element={<OrdersDetail />} />
       <Route exact path="/order-history" element={<OrdersHistory />} />
-      <Route exact path="/products/search" element={<SearchPage />} />
+      <Route exact path="/search" element={<SearchPage />} />
       <Route exact path="/login" element={<LogIn />} />
       <Route exact path="/signup" element={<SignUp />} />
       <Route exact path="/page-under-maintenance" element={<PageUnderMaintenance />} />

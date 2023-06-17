@@ -8,13 +8,16 @@ export const Search = styled('div')(({ theme }) => ({
   height: '50px',
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25)
+    backgroundColor: alpha(theme.palette.common.black, 0.03)
+  },
+  '&:focus-within': {
+    borderColor: alpha(theme.palette.common.black, 0.5)
   },
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   padding: '10px 17px',
-  color: '#ADADAD',
+  color: theme.palette.common.black,
   [theme.breakpoints.between('tablet_650', 'tablet_840')]: {
     width: 'auto'
   }

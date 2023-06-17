@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { fetchAllProductsReducer } from './products'
+import { fetchAllProductsReducer, fetchProductsBySearchReducer } from './products'
 
-const rootReducer = combineReducers({ fetchAllProductsReducer })
+const rootReducer = combineReducers({ fetchAllProductsReducer, fetchProductsBySearchReducer })
 
 export default rootReducer
