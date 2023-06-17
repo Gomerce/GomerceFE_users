@@ -23,12 +23,7 @@ export const fetchRequest = async (url, token) => {
  * @param contentType: 'application/json' | 'multipart/form-data'
  * @returns {Promise<any>}
  */
-export const mutatePostRequest = async (
-  url,
-  body,
-  token,
-  contentType
-) => {
+export const mutatePostRequest = async (url, body, token, contentType) => {
   const { data } = await axiosInstance.post(url, body, {
     headers: {
       'Content-Type': contentType,
@@ -46,12 +41,7 @@ export const mutatePostRequest = async (
  * @param contentType: 'application/json' | 'multipart/form-data'
  * @returns {Promise<any>}
  */
-export const mutatePatchRequest = async (
-  url,
-  body,
-  token,
-  contentType
-) => {
+export const mutatePatchRequest = async (url, body, token, contentType) => {
   const { data } = await axiosInstance.patch(url, body, {
     headers: {
       'Content-Type': contentType,
@@ -69,12 +59,7 @@ export const mutatePatchRequest = async (
  * @param contentType: 'application/json' | 'multipart/form-data'
  * @returns {Promise<any>}
  */
-export const mutatePutRequest = async (
-  url,
-  body,
-  token,
-  contentType
-) => {
+export const mutatePutRequest = async (url, body, token, contentType) => {
   const { data } = await axiosInstance.put(url, body, {
     headers: {
       'Content-Type': contentType,

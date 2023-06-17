@@ -27,25 +27,26 @@ const LandingPage = () => {
   }, [productsError])
 
   return (
-        <Wrapper>
-            <Grid container direction={{ laptop_1024: 'row' }} spacing={1}>
-                {!matchesLaptop && (
-                    <Grid item tablet_650={3}>
-                        <SideNav/>
-                    </Grid>
-                )}
-                {showError &&
-                    <Snackbar open={showError} autoHideDuration={6000} onClose={() => setShowError(false)}>
-                        <Alert onClose={() => setShowError(false)} severity="error">
-                            {productsError}
-                        </Alert>
-                    </Snackbar>}
-                <Grid item mobile_0={matchesLaptop ? 12 : 9}>
-                    {productsLoading && <CircularProgress/>}
-                    <AsideMain products={products}/>
-                </Grid>
-            </Grid>
-        </Wrapper>
+    <Wrapper>
+      <Grid container direction={{ laptop_1024: 'row' }} spacing={1}>
+        {!matchesLaptop && (
+          <Grid item tablet_650={3}>
+            <SideNav />
+          </Grid>
+        )}
+        {showError && (
+          <Snackbar open={showError} autoHideDuration={6000} onClose={() => setShowError(false)}>
+            <Alert onClose={() => setShowError(false)} severity="error">
+              {productsError}
+            </Alert>
+          </Snackbar>
+        )}
+        <Grid item mobile_0={matchesLaptop ? 12 : 9}>
+          {productsLoading && <CircularProgress />}
+          <AsideMain products={products} />
+        </Grid>
+      </Grid>
+    </Wrapper>
   )
 }
 

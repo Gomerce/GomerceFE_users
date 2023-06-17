@@ -9,20 +9,16 @@ import { carouselSettings } from './settings'
 import PropTypes from 'prop-types'
 
 const ItemsCarousel = ({ products }) => {
-  const slides = products?.concat(products, products, products)?.map((item, index) =>
-        <ProductCard
-            sx={{}}
-            key={index}
-            {...item}
-        />
-  )
+  const slides = products
+    ?.concat(products, products, products)
+    ?.map((item, index) => <ProductCard sx={{}} key={index} {...item} />)
 
   return (
-        <>
-            <Slider {...carouselSettings} style={{ padding: '1% 0' }}>
-                {slides}
-            </Slider>
-        </>
+    <>
+      <Slider {...carouselSettings} style={{ padding: '1% 0' }}>
+        {slides}
+      </Slider>
+    </>
   )
 }
 
