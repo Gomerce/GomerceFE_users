@@ -1,14 +1,30 @@
 import SideNav from './SideNav'
 import AsideMain from './AsideMain'
-import Grid from '@mui/material/Grid'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Wrapper from '../../components/Wrapper/Wrapper'
-import { useMediaQuery } from '@mui/material'
+import { Alert, CircularProgress, Grid, Snackbar, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchAllProducts } from '../../redux/actions/product'
 
 const LandingPage = () => {
   const theme = useTheme()
   const matchesLaptop = useMediaQuery(theme.breakpoints.down('laptop_1152'))
+  const [showError, setShowError] = useState(false)
+  const dispatch = useDispatch()
+  const {
+    loading: productsLoading,
+    error: productsError,
+    products
+  } = useSelector((state) => state.fetchAllProductsReducer)
+
+  useEffect(() => {
+    dispatch(fetchAllProducts())
+  }, [dispatch])
+
+  useEffect(() => {
+    setShowError(Boolean(productsError))
+  }, [productsError])
 
   return (
     <Wrapper>
@@ -18,15 +34,17 @@ const LandingPage = () => {
             <SideNav />
           </Grid>
         )}
-        {matchesLaptop ? (
-          <Grid item mobile_0={12}>
-            <AsideMain />
-          </Grid>
-        ) : (
-          <Grid item mobile_0={9}>
-            <AsideMain />
-          </Grid>
+        {showError && (
+          <Snackbar open={showError} autoHideDuration={6000} onClose={() => setShowError(false)}>
+            <Alert onClose={() => setShowError(false)} severity="error">
+              {productsError}
+            </Alert>
+          </Snackbar>
         )}
+        <Grid item mobile_0={matchesLaptop ? 12 : 9}>
+          {productsLoading && <CircularProgress />}
+          <AsideMain products={products} />
+        </Grid>
       </Grid>
     </Wrapper>
   )

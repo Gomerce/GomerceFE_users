@@ -43,7 +43,7 @@ export const TrackDisplay = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   padding: '1%'
-  // [theme.breakpoints.down("laptop_1024")]: {
+  // [index.breakpoints.down("laptop_1024")]: {
   //   display: "none",
   // },
 }))

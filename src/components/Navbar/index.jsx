@@ -85,7 +85,8 @@ const PrimarySearchAppBar = () => {
                 aria-controls={accountMenuOpen ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={accountMenuOpen ? 'true' : undefined}
-                onClick={handleAccountMenuClick}>
+                onClick={handleAccountMenuClick}
+              >
                 Account
               </Button>
               <Menu
@@ -98,12 +99,13 @@ const PrimarySearchAppBar = () => {
                 }}
               >
                 <Box sx={{ textAlign: 'center', marginBottom: '.5rem' }}>
-                  {isAuthenticated
-                    ? <Typography>Auth</Typography>
-                    : <Button variant="contained" onClick={() => loginWithRedirect()}>
+                  {isAuthenticated ? (
+                    <Typography>Auth</Typography>
+                  ) : (
+                    <Button variant="contained" onClick={() => loginWithRedirect()}>
                       Sign In
                     </Button>
-                  }
+                  )}
                 </Box>
                 <Divider />
                 <MenuItem onClick={handleAccountMenuClose}>
@@ -120,7 +122,11 @@ const PrimarySearchAppBar = () => {
                 </MenuItem>
                 <Divider />
                 <Box sx={{ textAlign: 'center', marginBottom: '.25rem' }}>
-                  <Button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>logout</Button>
+                  <Button
+                    onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                  >
+                    logout
+                  </Button>
                 </Box>
               </Menu>
               <Button variant="outlined" startIcon={<ShoppingCartOutlinedIcon />}>

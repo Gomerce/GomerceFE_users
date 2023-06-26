@@ -162,4 +162,5 @@ GitHub.sublime-settings
 .history
 .ionide
 
+build
 # End of https://www.toptal.com/developers/gitignore/api/react,phpstorm+all,visualstudiocode,sublimetext,notepadpp

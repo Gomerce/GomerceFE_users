@@ -1,23 +1,21 @@
 import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Search, SearchIconWrapper, StyledInputBase, customSearchIcon } from './styles'
 
 const SearchInput = () => {
-  const [searchWord, setSearchWord] = useState('')
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const query = searchParams.get('q')
+  const [searchTerm, setSearchTerm] = useState('')
 
-  const searchProduct = () => {
-    if (searchWord.trim()) {
-      setSearchWord('')
-      console.log(searchWord)
-    } else {
-      navigate('/')
-    }
-  }
-  const handleKeyPress = (e) => {
-    if (e.charCode === 13) {
-      searchProduct()
+  /**
+   * on enter pressed
+   * @param event
+   */
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      navigate({ pathname: '/search', search: `?q=${searchTerm}` })
     }
   }
 
@@ -27,11 +25,11 @@ const SearchInput = () => {
         <SearchIcon sx={customSearchIcon} />
       </SearchIconWrapper>
       <StyledInputBase
-        placeholder="Search"
+        placeholder="search"
         inputProps={{ 'aria-label': 'search' }}
-        value={searchWord}
-        onChange={(e) => setSearchWord(e.target.value)}
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyDown}
+        onChange={(event) => setSearchTerm(event.currentTarget.value)}
+        defaultValue={query ? String(query) : searchTerm}
       />
     </Search>
   )
