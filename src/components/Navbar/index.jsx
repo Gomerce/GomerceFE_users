@@ -19,7 +19,7 @@ import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import ListAltIcon from '@mui/icons-material/ListAlt'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { customAppBarStyle, StyledButtonGroup, toolBarStyles } from './styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useTheme } from '@mui/material/styles'
@@ -75,7 +75,7 @@ const PrimarySearchAppBar = () => {
         <StyledButtonGroup>
           {!matchesLaptop ? (
             <>
-              <Button variant="outlined" startIcon={<FavoriteBorderIcon />}>
+              <Button variant="outlined" startIcon={<FavoriteBorderIcon />} component={Link} to="/wishlist">
                 Wishlist
               </Button>
               <Button
@@ -129,7 +129,7 @@ const PrimarySearchAppBar = () => {
                   </Button>
                 </Box>
               </Menu>
-              <Button variant="outlined" startIcon={<ShoppingCartOutlinedIcon />}>
+              <Button variant="outlined" startIcon={<ShoppingCartOutlinedIcon />} component={Link} to="/cart">
                 Cart
               </Button>
             </>

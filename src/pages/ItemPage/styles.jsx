@@ -11,10 +11,12 @@ export const Details = styled(Box)({
 export const Image = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-end',
+  alignItems: 'center',
   width: '337px',
   height: '406px',
   background: '#FFFFFF',
+  objectFit: 'contain',
+  gap: '15px',
 
   [theme.breakpoints.down('tablet_600')]: {
     width: '100%'

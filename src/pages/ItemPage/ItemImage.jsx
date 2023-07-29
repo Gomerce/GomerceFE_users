@@ -1,18 +1,25 @@
 import React from 'react'
 import { Image, Preview, Thumbnail, ThumbnailsSection } from './styles'
-import phone from '../../assets/images/1 (2).jpg'
-import phone2 from '../../assets/images/1 (1).jpg'
-const ItemImage = () => {
+import PropTypes from 'prop-types'
+
+const ItemImage = (props) => {
+  const { image, thumbnail } = props
+
   return (
-    <Image>
-      <Preview img={phone} />
-      <ThumbnailsSection>
-        {[...Array(5)].map((_, index) => (
-          <Thumbnail key={index} img={phone2} />
-        ))}
-      </ThumbnailsSection>
-    </Image>
+        <Image>
+            <Preview img={image || 'https://placehold.co/400x400'}/>
+            <ThumbnailsSection>
+                {[...Array(5)].map((_, index) => (
+                    <Thumbnail key={index} img={thumbnail || 'https://placehold.co/200x200'}/>
+                ))}
+            </ThumbnailsSection>
+        </Image>
   )
+}
+
+ItemImage.propTypes = {
+  image: PropTypes.string | undefined,
+  thumbnail: PropTypes.string | undefined
 }
 
 export default ItemImage

@@ -19,7 +19,7 @@ const Index = () => {
       <Route index element={<LandingPage />} />
       <Route exact path="/cart" element={<Cart />} />
       <Route exact path="/checkout" element={<Checkout />} />
-      <Route exact path="/item-page" element={<ItemPage />} />
+      <Route exact path="/product/:productId" element={<ItemPage />} />
       <Route exact path="/order-detail" element={<OrdersDetail />} />
       <Route exact path="/order-history" element={<OrdersHistory />} />
       <Route exact path="/search" element={<SearchPage />} />
