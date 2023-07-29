@@ -24,6 +24,10 @@ const ItemPage = () => {
     product
   } = useSelector((state) => state.fetchProductReducer)
 
+  const addToCart = (product) => {
+    dispatch({ type: 'ADD_TO_CART', payload: product })
+  }
+
   useEffect(() => {
     dispatch(fetchProductById(productId))
   }, [dispatch])
@@ -48,7 +52,7 @@ const ItemPage = () => {
                 {productLoading && <CircularProgress/>}
                 {showError && <Alert severity="error">{productError}</Alert>}
                 <BreadCrumbs navigation={navigation} max={matchesLaptop1024 ? 2 : 8}/>
-                <DetailsMain product={product}/>
+                <DetailsMain product={product} handleAddToCart={addToCart}/>
                 <SpecificationsMain/>
                 <ReviewsMain/>
                 <RecommendedItems/>

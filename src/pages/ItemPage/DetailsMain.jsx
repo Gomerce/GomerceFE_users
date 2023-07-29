@@ -12,7 +12,7 @@ import { Details, DetailsWrap, IconsWrapper, ItemDetails, ShareSection } from '.
 import PropTypes from 'prop-types'
 
 const DetailsMain = (props) => {
-  const { product } = props
+  const { product, handleAddToCart } = props
 
   return (
         <Details>
@@ -87,7 +87,11 @@ const DetailsMain = (props) => {
                                 + shipping from {'---'} to {'---'}
                             </Typography>
                             <Box mt={2} mb={1}>
-                                <Button variant="contained" fullWidth={false} startIcon={<AddShoppingCartIcon/>}>
+                                <Button variant="contained"
+                                        fullWidth={false}
+                                        startIcon={<AddShoppingCartIcon/>}
+                                        onClick={() => handleAddToCart(product)}
+                                >
                                     Add to cart
                                 </Button>
                             </Box>
@@ -126,7 +130,8 @@ DetailsMain.propTypes = {
     short_desc: PropTypes.string,
     thumbnail: PropTypes.string | null,
     title: PropTypes.string
-  }
+  },
+  handleAddToCart: PropTypes.func
 }
 
 export default DetailsMain

@@ -3,7 +3,11 @@ import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 import reducers from './reducers'
 
-const initialState = {}
+const initialState = {
+  cartReducer: {
+    cartItems: JSON.parse(localStorage.getItem('cartItems')) ?? []
+  }
+}
 
 const middleware = [thunk]
 

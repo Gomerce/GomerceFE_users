@@ -17,6 +17,11 @@ const LandingPage = () => {
     error: productsError,
     products
   } = useSelector((state) => state.fetchAllProductsReducer)
+  const { cartItems } = useSelector(state => state.cartReducer)
+
+  const addToCart = (product) => {
+    dispatch({ type: 'ADD_TO_CART', payload: product })
+  }
 
   useEffect(() => {
     dispatch(fetchAllProducts())
@@ -25,6 +30,10 @@ const LandingPage = () => {
   useEffect(() => {
     setShowError(Boolean(productsError))
   }, [productsError])
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  }, [cartItems])
 
   return (
     <Wrapper>
@@ -43,7 +52,7 @@ const LandingPage = () => {
         )}
         <Grid item mobile_0={matchesLaptop ? 12 : 9}>
           {productsLoading && <CircularProgress />}
-          <AsideMain products={products} />
+          <AsideMain products={products} addItem={addToCart}/>
         </Grid>
       </Grid>
     </Wrapper>
