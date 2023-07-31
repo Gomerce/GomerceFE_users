@@ -6,3 +6,4 @@ export const PRODUCT_KEY = (id) => {
 }
 
 export const CATEGORIES_KEY = '/categories'
+export const SHIPPING_KEY = '/shipping_addresses'

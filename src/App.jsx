@@ -6,8 +6,10 @@ import { Box, styled } from '@mui/material'
 import { useLocation } from 'react-router-dom'
 import './App.css'
 import FloatingButton from './components/FloatingButton'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 
-const App = () => {
+const App = (props) => {
   const location = useLocation()
 
   const AppContainer = styled(Box)(({ theme }) => ({
@@ -26,12 +28,14 @@ const App = () => {
   ]
 
   return (
-    <AppContainer>
-      {!exceptPath.includes(location.pathname) && <Navbar />}
-      <Index />
-      <FloatingButton />
-      {!exceptPath.includes(location.pathname) && <Footer />}
-    </AppContainer>
+        <LocalizationProvider dateAdapter={AdapterMoment}>
+            <AppContainer>
+                {!exceptPath.includes(location.pathname) && <Navbar/>}
+                <Index/>
+                <FloatingButton/>
+                {!exceptPath.includes(location.pathname) && <Footer/>}
+            </AppContainer>
+        </LocalizationProvider>
   )
 }
 

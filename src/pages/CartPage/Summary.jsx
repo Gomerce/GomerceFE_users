@@ -6,6 +6,7 @@ import CustomDivider from '../../components/CustomDivider'
 import PropTypes from 'prop-types'
 
 import { CustomSummary, Row } from './styles'
+import { Link } from 'react-router-dom'
 
 const Summary = (props) => {
   const { items, total } = props
@@ -31,7 +32,7 @@ const Summary = (props) => {
           </Typography>
         </Box>
       </Row>
-      <Button variant="contained" fullWidth={'true'}>
+      <Button variant="contained" fullWidth={'true'} component={Link} to="/checkout">
         proceed to checkOut
       </Button>
     </CustomSummary>
