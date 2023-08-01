@@ -1,4 +1,5 @@
 import checkoutFormModel from './checkoutModel'
+
 const {
   formField: {
     firstName,
@@ -12,7 +13,9 @@ const {
     cvv,
     mobile,
     shippingAddress,
-    state
+    state,
+    voucher,
+    paymentMethod
   }
 } = checkoutFormModel
 
@@ -28,5 +31,7 @@ export default {
   [nameOnCard.name]: '',
   [cardNumber.name]: '',
   [expiryDate.name]: '',
-  [cvv.name]: ''
+  [cvv.name]: '',
+  [paymentMethod.name]: '',
+  [voucher.name]: ''
 }

@@ -20,6 +20,9 @@ import { Form, Formik } from 'formik'
 import validationSchema from './validationSchema'
 import checkoutFormModel from './checkoutModel'
 import formInitialValues from './initialValues'
+import { mutatePostRequest } from '../../utils/fetchers'
+import { ORDERS_KEY } from '../../constants'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const { formId, formField } = checkoutFormModel
 
@@ -45,17 +48,21 @@ const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0)
   const currentValidationSchema = validationSchema[activeStep]
   const isLastStep = activeStep === steps.length - 1
+  const { getAccessTokenSilently } = useAuth0()
 
   function _sleep (ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
   }
 
   async function _submitForm (values, actions) {
+    const token = await getAccessTokenSilently()
     await _sleep(1000)
     alert(JSON.stringify(values, null, 2))
     actions.setSubmitting(false)
 
     setActiveStep(activeStep + 1)
+    console.log(values)
+    await mutatePostRequest(ORDERS_KEY, values, token, 'application/json')
   }
 
   function _handleSubmit (values, actions) {
@@ -92,9 +99,12 @@ const Checkout = () => {
                         Checkout
                     </Typography>
 
-                    <Stepper activeStep={activeStep} style={{
-                      padding: theme.spacing(3, 0, 5)
-                    }}>
+                    <Stepper
+                        activeStep={activeStep}
+                        style={{
+                          padding: theme.spacing(3, 0, 5)
+                        }}
+                    >
                         {steps.map(label => (
                             <Step key={label}>
                                 <StepLabel>{label}</StepLabel>

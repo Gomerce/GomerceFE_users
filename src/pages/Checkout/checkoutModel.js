@@ -46,6 +46,11 @@ export default {
       label: 'Shipping address*',
       requiredErrorMsg: 'Shipping address is required'
     },
+    paymentMethod: {
+      name: 'paymentMethod',
+      label: 'Payment method*',
+      requiredErrorMsg: 'Payment is required'
+    },
     nameOnCard: {
       name: 'nameOnCard',
       label: 'Name on card*',
@@ -68,6 +73,12 @@ export default {
       label: 'CVV*',
       requiredErrorMsg: 'CVV is required',
       invalidErrorMsg: 'CVV is invalid (e.g. 357)'
+    },
+    voucher: {
+      name: 'voucher',
+      label: 'Voucher*',
+      requiredErrorMsg: 'Voucher is required',
+      invalidErrorMsg: 'Voucher is invalid (e.g. 357)'
     }
   }
 }

@@ -15,7 +15,9 @@ const {
     nameOnCard,
     cardNumber,
     expiryDate,
-    cvv
+    cvv,
+    paymentMethod,
+    voucher
   }
 } = checkoutFormModel
 
@@ -37,6 +39,7 @@ export default [
     [shippingAddress.name]: Yup.string().required(`${shippingAddress.requiredErrorMsg}`)
   }),
   Yup.object().shape({
+    [paymentMethod.name]: Yup.string().required(`${paymentMethod.requiredErrorMsg}`),
     [nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
     [cardNumber.name]: Yup.string()
       .required(`${cardNumber.requiredErrorMsg}`)
@@ -57,6 +60,7 @@ export default [
       }),
     [cvv.name]: Yup.string()
       .required(`${cvv.requiredErrorMsg}`)
-      .test('len', `${cvv.invalidErrorMsg}`, val => val && val.length === 3)
+      .test('len', `${cvv.invalidErrorMsg}`, val => val && val.length === 3),
+    [voucher.name]: Yup.string()
   })
 ]
