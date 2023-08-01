@@ -1,6 +1,5 @@
 import React from 'react'
 import { ActionRow } from './styles'
-import Phone from '../../assets/images/phone1.jfif'
 import CustomDivider from '../../components/CustomDivider'
 import {
   Box,
@@ -17,15 +16,17 @@ import {
 } from '@mui/material'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined'
+import PropTypes from 'prop-types'
 
-const CartItem = () => {
-  const [quantity, setQuantity] = React.useState('')
+const CartItem = (props) => {
+  const { item, handleDeleteItem } = props
+  const [quantity, setQuantity] = React.useState('1')
+  const theme = useTheme()
+  const matchesMobile550 = useMediaQuery(theme.breakpoints.down('mobile_550'))
 
   const handleChange = (event) => {
     setQuantity(event.target.value)
   }
-  const theme = useTheme()
-  const matchesMobile550 = useMediaQuery(theme.breakpoints.down('mobile_550'))
 
   return (
     <Box>
@@ -37,7 +38,7 @@ const CartItem = () => {
       >
         <Grid item mobile_0={3}>
           <Box>
-            <img src={Phone} alt={Phone} />
+            <img src={item?.image || 'https://placehold.co/600x400'} alt={item?.title} width="100%"/>
           </Box>
         </Grid>
         <Grid
@@ -52,25 +53,25 @@ const CartItem = () => {
             <Box>
               <Typography
                 variant="p"
-                fontSize={'14px'}
+                fontSize={'18px'}
                 fontWeight={400}
                 sx={{ display: 'block', marginBottom: '0.5em' }}
               >
-                xiamo redmi 10A, 6.53&quot; 3GB+64GB, 13.0MP, 5000mAh
+                {item?.title}
+              </Typography>
+              <Typography
+                variant="p"
+                fontSize={'16px'}
+                fontWeight={400}
+                sx={{ display: 'block', marginBottom: '1em' }}
+              >
+                {item?.short_desc}
               </Typography>
               <Typography
                 variant="p"
                 fontSize={'14px'}
                 fontWeight={400}
-                sx={{ display: 'block', marginBottom: '0.5em' }}
-              >
-                4g LTE, Dual sim - graphite grey
-              </Typography>
-              <Typography
-                variant="p"
-                fontSize={'10px'}
-                fontWeight={400}
-                sx={{ display: 'block', marginBottom: '0.5em' }}
+                sx={{ display: 'block', marginBottom: '0.75em' }}
               >
                 In stock
               </Typography>
@@ -99,7 +100,7 @@ const CartItem = () => {
                 {matchesMobile550 ? (
                   <DeleteOutlineOutlinedIcon />
                 ) : (
-                  <Button variant="text">delete</Button>
+                  <Button variant="text" onClick={() => handleDeleteItem(item)}>delete</Button>
                 )}
                 <Divider orientation="vertical" variant="middle" flexItem />
                 {matchesMobile550 ? (
@@ -124,7 +125,7 @@ const CartItem = () => {
                   laptop_1024: '700'
                 }}
               >
-                <b>$ 29.21</b>
+                <b>$ {Number(item?.price) * Number(quantity)}</b>
               </Typography>
             </Box>
           </Grid>
@@ -133,6 +134,18 @@ const CartItem = () => {
       <CustomDivider />
     </Box>
   )
+}
+
+CartItem.propTypes = {
+  item: {
+    id: PropTypes.number,
+    image: PropTypes.any,
+    price: PropTypes.string,
+    short_desc: PropTypes.string,
+    thumbnail: PropTypes.any,
+    title: PropTypes.string
+  },
+  handleDeleteItem: PropTypes.func
 }
 
 export default CartItem

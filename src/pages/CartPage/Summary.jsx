@@ -3,10 +3,14 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import CustomDivider from '../../components/CustomDivider'
+import PropTypes from 'prop-types'
 
 import { CustomSummary, Row } from './styles'
+import { Link } from 'react-router-dom'
 
-const Summary = () => {
+const Summary = (props) => {
+  const { items, total } = props
+
   return (
     <CustomSummary>
       <Typography
@@ -20,19 +24,24 @@ const Summary = () => {
       <CustomDivider />
       <Row mt={2} mb={1}>
         <Box>
-          <Typography variant="body2">Subtotal (2 items)</Typography>
+          <Typography variant="body2">Subtotal ({items?.length} items)</Typography>
         </Box>
         <Box>
           <Typography variant="body2" fontSize={'24px'} fontWeight={700}>
-            <b>$ 59.9</b>
+            <b>$ {total}</b>
           </Typography>
         </Box>
       </Row>
-      <Button variant="contained" fullWidth={'true'}>
+      <Button variant="contained" fullWidth={'true'} component={Link} to="/checkout">
         proceed to checkOut
       </Button>
     </CustomSummary>
   )
+}
+
+Summary.propTypes = {
+  total: PropTypes.number,
+  items: PropTypes.any
 }
 
 export default Summary
